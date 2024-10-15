@@ -10,8 +10,19 @@ import (
 )
 
 func main() {
+
+	if len(os.Args) != 3 {
+		return
+	}
+
+	if os.Args[1] == "" {
+		return
+	}
+
+	// start coding here.
+
 	// Open the file
-	file1, err1 := os.Open("yourfile.txt")
+	file1, err1 := os.Open(os.Args[2])
 	if err1 != nil {
 		fmt.Println("Error opening file1:", err1)
 		return
