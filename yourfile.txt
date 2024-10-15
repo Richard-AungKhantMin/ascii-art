@@ -1,0 +1,11 @@
+hello
+hi
+red
+pencil
+golang
+coffee
+2
+3
+7
+6666666
+meow
