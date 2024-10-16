@@ -26,8 +26,8 @@ func main() {
 	IsErrNil(err)
 	defer style.Close()
 
-	TempoForReading := bufio.NewScanner(style)
 	var Lines []string
+	TempoForReading := bufio.NewScanner(style)
 
 	for TempoForReading.Scan() {
 		Lines = append(Lines, TempoForReading.Text())
@@ -39,16 +39,16 @@ func main() {
 	}
 
 	var NestedSlice [][]string
-
 	for _, eachC := range os.Args[1] {
 		NestedSlice = append(NestedSlice, LinesPackages(eachC, Lines))
-		fmt.Println(string(eachC))
 	}
 
-	fmt.Println(NestedSlice[0])
-
-	for _, eachSlice := range NestedSlice {
-		PrintChar(eachSlice)
+	FinalResult := make([]string, 8)
+	for i := 0; i <= 7; i++ {
+		for j := 0; j < len(NestedSlice); j++ {
+			FinalResult[i] = FinalResult[i] + NestedSlice[j][i]
+		}
 	}
 
+	PrintChar(FinalResult)
 }
