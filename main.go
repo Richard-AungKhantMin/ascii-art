@@ -6,6 +6,7 @@ package main
 
 import (
 	"bufio"
+	"fmt"
 	"os"
 )
 
@@ -25,12 +26,26 @@ func main() {
 	IsErrNil(err)
 	defer style.Close()
 
-	Lines := bufio.NewScanner(style)
+	TempoForReading := bufio.NewScanner(style)
+	var Lines []string
+
+	for TempoForReading.Scan() {
+		Lines = append(Lines, TempoForReading.Text())
+	}
+
+	if err := TempoForReading.Err(); err != nil {
+		fmt.Println("Error reading lines:", err)
+		return
+	}
+
 	var NestedSlice [][]string
 
 	for _, eachC := range os.Args[1] {
 		NestedSlice = append(NestedSlice, LinesPackages(eachC, Lines))
+		fmt.Println(string(eachC))
 	}
+
+	fmt.Println(NestedSlice[0])
 
 	for _, eachSlice := range NestedSlice {
 		PrintChar(eachSlice)
