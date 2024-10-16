@@ -1,11 +1,11 @@
 //1+8+1+8+1+8+1+8+
 //1+8 format
 
+// unprintable character
 package main
 
 import (
 	"bufio"
-	"fmt"
 	"os"
 )
 
@@ -33,7 +33,7 @@ func main() {
 	}
 
 	for _, eachSlice := range NestedSlice {
-		fmt.Println(eachSlice)
+		PrintChar(eachSlice)
 	}
 
 }
