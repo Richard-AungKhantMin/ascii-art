@@ -2,10 +2,11 @@ package main
 
 import "bufio"
 
-func LinesPackage(c rune, Lines *bufio.Scanner) (result [8]string) {
+func LinesPackages(c rune, Lines *bufio.Scanner) (Finalresult []string) {
 
 	lineCounter := 1
 	start, end := Limits(c)
+	var result [8]string
 
 	for Lines.Scan() {
 
@@ -28,5 +29,7 @@ func LinesPackage(c rune, Lines *bufio.Scanner) (result [8]string) {
 		lineCounter++
 	}
 
-	return result
+	Finalresult = result[:]
+
+	return Finalresult
 }

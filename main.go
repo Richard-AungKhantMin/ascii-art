@@ -29,7 +29,7 @@ func main() {
 	var NestedSlice [][]string
 
 	for _, eachC := range os.Args[1] {
-		NestedSlice = append(NestedSlice, LinesPackage(eachC, Lines))
+		NestedSlice = append(NestedSlice, LinesPackages(eachC, Lines))
 	}
 
 	for _, eachSlice := range NestedSlice {
