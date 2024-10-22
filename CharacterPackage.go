@@ -1,6 +1,6 @@
 package main
 
-func LinesPackages(c rune, Lines []string) []string {
+func CharacterPackage(c rune, Lines []string) []string {
 
 	start, end := Limits(c)
 	var result []string
