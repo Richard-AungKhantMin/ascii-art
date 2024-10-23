@@ -4,7 +4,7 @@ import (
 	"strings"
 )
 
-func Mylab(input string) string {
+func MyLab(input string) string {
 
 	var FinalText string
 

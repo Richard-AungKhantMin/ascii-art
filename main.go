@@ -16,6 +16,6 @@ func main() {
 		return
 	}
 
-	UltraMegaFinalResultText := Mylab(os.Args[1])
+	UltraMegaFinalResultText := MyLab(os.Args[1])
 	fmt.Print(UltraMegaFinalResultText)
 }
