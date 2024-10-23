@@ -6,7 +6,7 @@ func Filter(sentence string) []string {
 	var word string
 	lastWord := len(sentence) - 1
 
-	for i := 0; i < lastWord; i++ {
+	for i := 0; i <= lastWord; i++ {
 
 		if i < lastWord && sentence[i] == '\\' && sentence[i+1] == 'n' {
 
@@ -16,6 +16,7 @@ func Filter(sentence string) []string {
 			}
 
 			FilteredSlice = append(FilteredSlice, "\n")
+			i++
 
 		} else {
 

@@ -16,11 +16,17 @@ func main() {
 		return
 	}
 
+	var emptyLineCount int
 	Filtered := Filter(os.Args[1])
 
 	for i := 0; i < len(Filtered); i++ {
 		if Filtered[i] == "\n" {
-			fmt.Println()
+
+			if emptyLineCount > 0 {
+				fmt.Println()
+			}
+			emptyLineCount++
+
 		} else {
 			MyLab(Filtered[i])
 		}
