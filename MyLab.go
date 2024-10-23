@@ -1,12 +1,10 @@
 package main
 
-import "os"
-
 func MyLab(word string) {
 	Lines := BufioToSlice()
 
 	var NestedSlice [][]string
-	for _, eachC := range os.Args[1] {
+	for _, eachC := range word {
 		NestedSlice = append(NestedSlice, CharacterPackage(eachC, Lines))
 	}
 

@@ -1,29 +1,30 @@
 package main
 
 func Filter(sentence string) []string {
-	var FilteredSlice []string
-	var temp string
 
-	for i := 0; i < len(sentence); i++ {
-		// Check for '\n'
-		if i < len(sentence)-1 && sentence[i] == '\\' && sentence[i+1] == 'n' {
-			// Add any accumulated string before the '\n'
-			if temp != "" {
-				FilteredSlice = append(FilteredSlice, temp)
-				temp = "" // Reset temp
+	var FilteredSlice []string
+	var word string
+	lastWord := len(sentence) - 1
+
+	for i := 0; i < lastWord; i++ {
+
+		if i < lastWord && sentence[i] == '\\' && sentence[i+1] == 'n' {
+
+			if word != "" {
+				FilteredSlice = append(FilteredSlice, word)
+				word = ""
 			}
-			// Add the newline character to the slice
+
 			FilteredSlice = append(FilteredSlice, "\n")
-			i++ // Skip the 'n' character as we already processed '\n'
+
 		} else {
-			// Accumulate normal characters into temp
-			temp += string(sentence[i])
+
+			word = word + string(sentence[i])
 		}
 	}
 
-	// Add any remaining string to the slice
-	if temp != "" {
-		FilteredSlice = append(FilteredSlice, temp)
+	if word != "" {
+		FilteredSlice = append(FilteredSlice, word)
 	}
 
 	return FilteredSlice

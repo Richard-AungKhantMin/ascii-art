@@ -17,10 +17,9 @@ func main() {
 	}
 
 	Filtered := Filter(os.Args[1])
-	fmt.Println(len(Filtered))
 
 	for i := 0; i < len(Filtered); i++ {
-		if Filtered[i] == "\\n" {
+		if Filtered[i] == "\n" {
 			fmt.Println()
 		} else {
 			MyLab(Filtered[i])
