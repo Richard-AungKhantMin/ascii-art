@@ -12,7 +12,7 @@ func Filter(sentence string) []string {
 				FilteredSlice = append(FilteredSlice, word)
 				word = ""
 			}
-			FilteredSlice = append(FilteredSlice, "\\n")
+			FilteredSlice = append(FilteredSlice, "\n")
 			i++
 		} else {
 			word = word + string(sentence[i])
