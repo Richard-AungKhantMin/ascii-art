@@ -12,13 +12,13 @@ func BufioToSlice() []string {
 	defer style.Close()
 
 	var Lines []string
-	TempoForReading := bufio.NewScanner(style)
+	TempForReading := bufio.NewScanner(style)
 
-	for TempoForReading.Scan() {
-		Lines = append(Lines, TempoForReading.Text())
+	for TempForReading.Scan() {
+		Lines = append(Lines, TempForReading.Text())
 	}
 
-	if err := TempoForReading.Err(); err != nil {
+	if err := TempForReading.Err(); err != nil {
 		fmt.Println("Error reading lines:", err)
 	}
 

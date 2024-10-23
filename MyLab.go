@@ -1,19 +1,24 @@
 package main
 
-func MyLab(word string) string {
-	Lines := BufioToSlice()
+func Mylab(input string) string {
 
-	var NestedSlice [][]string
-	for _, eachC := range word {
-		NestedSlice = append(NestedSlice, CharacterPackage(eachC, Lines))
-	}
+	var emptyLineCount int
+	var FinalText string
+	Filtered := Filter(input)
 
-	FinalResult := make([]string, 8)
-	for i := 0; i <= 7; i++ {
-		for j := 0; j < len(NestedSlice); j++ {
-			FinalResult[i] = FinalResult[i] + NestedSlice[j][i]
+	for i := 0; i < len(Filtered); i++ {
+		if Filtered[i] == "\n" {
+
+			if emptyLineCount > 0 {
+				FinalText = FinalText + "\n"
+			}
+			emptyLineCount++
+
+		} else {
+
+			FinalText = FinalText + LineOfWords(Filtered[i])
 		}
 	}
 
-	return PrintChar((FinalResult))
+	return FinalText
 }
