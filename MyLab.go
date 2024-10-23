@@ -1,13 +1,15 @@
 package main
 
+import "strings"
+
 func Mylab(input string) string {
 
 	var emptyLineCount int
 	var FinalText string
-	Filtered := Filter(input)
+	Splited := strings.Split(input, "\\n")
 
-	for i := 0; i < len(Filtered); i++ {
-		if Filtered[i] == "\n" {
+	for i := 0; i < len(Splited); i++ {
+		if Splited[i] == "\n" {
 
 			if emptyLineCount > 0 {
 				FinalText = FinalText + "\n"
@@ -16,7 +18,7 @@ func Mylab(input string) string {
 
 		} else {
 
-			FinalText = FinalText + LineOfWords(Filtered[i])
+			FinalText = FinalText + LineOfWords(Splited[i])
 		}
 	}
 
