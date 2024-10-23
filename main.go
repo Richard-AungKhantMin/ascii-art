@@ -12,7 +12,6 @@ func main() {
 	}
 
 	if os.Args[1] == "" {
-		fmt.Println()
 		return
 	}
 

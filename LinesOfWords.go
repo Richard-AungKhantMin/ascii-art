@@ -1,6 +1,6 @@
 package main
 
-func LineOfWords(word string) string {
+func LinesOfWords(word string) string {
 	Lines := BufioToSlice()
 
 	var NestedSlice [][]string

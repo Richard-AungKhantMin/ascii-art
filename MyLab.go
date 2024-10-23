@@ -17,7 +17,7 @@ func MyLab(input string) string {
 
 		} else {
 
-			FinalText = FinalText + LineOfWords(Splited[i])
+			FinalText = FinalText + LinesOfWords(Splited[i])
 		}
 	}
 

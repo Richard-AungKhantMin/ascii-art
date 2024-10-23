@@ -2,9 +2,9 @@ package main
 
 func PrintChar(word []string) string {
 
-	var resultText string
+	resultText := word[0]
 
-	for i := 0; i < len(word); i++ {
+	for i := 1; i < len(word); i++ {
 		resultText = resultText + "\n" + word[i]
 	}
 
