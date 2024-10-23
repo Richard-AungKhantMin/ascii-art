@@ -21,12 +21,15 @@ func TestMyLab(t *testing.T) {
 
 	// Iterate through each test case
 	for _, tc := range testCases {
-		// Run the function with the test input
-		result := MyLab(tc.input)
+		t.Run(tc.name, func(*testing.T) {
 
-		// Compare the result with the expected output
-		if result != tc.expected {
-			t.Errorf("MyLab(%q) = %q; expected %q", tc.input, result, tc.expected)
-		}
+			// Run the function with the test input
+			result := MyLab(tc.input)
+
+			// Compare the result with the expected output
+			if result != tc.expected {
+				t.Errorf("MyLab(%q) = %q; expected %q", tc.input, result, tc.expected)
+			}
+		})
 	}
 }
