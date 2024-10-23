@@ -17,19 +17,22 @@ func main() {
 	}
 
 	var emptyLineCount int
+	var UltraMegaFinalResultText string
 	Filtered := Filter(os.Args[1])
 
 	for i := 0; i < len(Filtered); i++ {
 		if Filtered[i] == "\n" {
 
 			if emptyLineCount > 0 {
-				fmt.Println()
+				UltraMegaFinalResultText = UltraMegaFinalResultText + "\n"
 			}
 			emptyLineCount++
 
 		} else {
-			MyLab(Filtered[i])
+			fmt.Println(Filtered[i])
+			UltraMegaFinalResultText = UltraMegaFinalResultText + MyLab(Filtered[i])
 		}
 	}
 
+	fmt.Println(UltraMegaFinalResultText)
 }

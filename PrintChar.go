@@ -1,9 +1,13 @@
 package main
 
-import "fmt"
+func PrintChar(word []string) string {
 
-func PrintChar(word []string) {
-	for _, eachline := range word {
-		fmt.Println(eachline)
+	resultText := word[0]
+
+	for i := 1; i < len(word); i++ {
+		resultText = resultText + "\n" + word[i]
 	}
+	resultText = resultText + "\n"
+
+	return resultText
 }

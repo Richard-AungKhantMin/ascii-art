@@ -1,6 +1,6 @@
 package main
 
-func MyLab(word string) {
+func MyLab(word string) string {
 	Lines := BufioToSlice()
 
 	var NestedSlice [][]string
@@ -15,5 +15,5 @@ func MyLab(word string) {
 		}
 	}
 
-	PrintChar(FinalResult)
+	return PrintChar((FinalResult))
 }
