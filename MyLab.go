@@ -1,20 +1,19 @@
 package main
 
-import "strings"
+import (
+	"strings"
+)
 
 func Mylab(input string) string {
 
-	var emptyLineCount int
 	var FinalText string
+
 	Splited := strings.Split(input, "\\n")
 
 	for i := 0; i < len(Splited); i++ {
-		if Splited[i] == "\n" {
+		if Splited[i] == "" {
 
-			if emptyLineCount > 0 {
-				FinalText = FinalText + "\n"
-			}
-			emptyLineCount++
+			FinalText = FinalText + "\n"
 
 		} else {
 
@@ -22,5 +21,5 @@ func Mylab(input string) string {
 		}
 	}
 
-	return FinalText
+	return FinalText + "\n"
 }
